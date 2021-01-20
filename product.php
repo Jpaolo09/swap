@@ -171,7 +171,7 @@
                             <h5 class='profilename'>$curr_user</h5>
                           </div>";
 
-                    if(strcmp($product_status, "open") == 0)
+                    if(strcmp(strtolower($product_status), "open") === 0)
                     {
                       echo "<div class='comment'>
                               <form action='php/comment_db.php' method='post'>
