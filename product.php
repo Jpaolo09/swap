@@ -170,15 +170,30 @@
                     echo "<div class='name'>
                             <h5 class='profilename'>$curr_user</h5>
                           </div>";
+
+                    if(strcmp($product_status, "open") == 0)
+                    {
+                      echo "<div class='comment'>
+                              <form action='php/comment_db.php' method='post'>
+                                <textarea type='text' id='items_preferred' name='offered_item' required rows='2' column='100' class='form-control md-textarea' placeholder='Item Name...'></textarea>
+                                <br>
+                                <textarea type='text' id='items_comment' name='items_comment' required rows='3' column='100' class='form-control md-textarea' placeholder='comment here...'></textarea>
+                                <button class='post' type='submit'>post</button>
+                              </form>
+                            </div>";
+                    }
+                    else
+                    {
+                      echo "<div class='comment'>
+                              <form action='php/comment_db.php' method='post'>
+                                <textarea type='text' id='items_preferred' name='offered_item' required rows='2' column='100' class='form-control md-textarea' placeholder='Offers are closed' disabled></textarea>
+                                <br>
+                                <textarea type='text' id='items_comment' name='items_comment' required rows='3' column='100' class='form-control md-textarea' placeholder='This item is already sold' disabled></textarea>
+                                <button class='post' type='submit'>post</button>
+                              </form>
+                            </div>";
+                    }
                   ?>
-                  <div class="comment">
-                    <form action="php/comment_db.php" method="post">
-                      <textarea type="text" id="items_preferred" name="offered_item" required rows="2" column="100" class="form-control md-textarea" placeholder="Item Name..."></textarea>
-                      <br>
-                      <textarea type="text" id="items_comment" name="items_comment" required rows="3" column="100" class="form-control md-textarea" placeholder="comment here..."></textarea>
-                      <button class="post" type="submit">post</button>
-                    </form>
-                  </div>
 
                   <br>
                 </div>
